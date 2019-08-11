@@ -1,26 +1,28 @@
-# React/Django/REST template with Knox
+# React/Django/Redux/REST template with Knox
 
 ## About
-This is a project template for a React/Django/REST web app using Knox token authentication. The template includes a login page, a user registration page, and a main dashboard page. The template and instructions were created primarily for personal use but may help others get started.
+This is a project template for a React/Django/Redux/REST web app using Knox token authentication. The template includes a login page, a user registration page, and a main dashboard page. The template and instructions were created primarily for personal use but may help others get started.
 
 ## Get started
-`git clone https://github.com/kyleoverstreet/react_django_knox.git`
+```bash
+git clone https://github.com/kyleoverstreet/react_django_knox.git
+```
 
 **Rename the following directories:**
 * react_django_knox
-  * projectname
-    * appname
-    * frontend/src/components/appname
-    * projectname
+* react_django_knox/projectname
+* react_django_knox/projectname/appname
+* react_django_knox/projectname/frontend/src/components/appname
+* react_django_knox/projectname/projectname
     
 **Edit the following files:**
 
 react_django_knox/package.json
 ```json
-  "scripts": {
-    "dev": "webpack --mode development ./projectname/frontend/src/index.js --output ./projectname/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./projectname/frontend/src/index.js --output ./projectname/frontend/static/frontend/main.js"
-  },
+"scripts": {
+  "dev": "webpack --mode development ./projectname/frontend/src/index.js --output ./projectname/frontend/static/frontend/main.js",
+  "build": "webpack --mode production ./projectname/frontend/src/index.js --output ./projectname/frontend/static/frontend/main.js"
+},
 ```
 
 react_django_knox/projectname/manage.py
@@ -33,15 +35,8 @@ react_django_knox/projectname/projectname/settings.py
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'frontend',
-    'rest_framework',
-    'knox',
-    'accounts',
-    'optimizer'
+    ...
+    'appname'
 ]
 ```
 
@@ -98,17 +93,19 @@ import Dashboard from "./appname/Dashboard";
 
 **Install dependencies with the the following commands:**
 
-`pipenv shell`
-
-`pipenv install` (Note: I use django-pyodb-azure to connect to a local SQL Server database. This can be removed from the Pipfile otherwise)
-
-`npm install`
+```bash
+pipenv shell
+pipenv install
+npm install
+```
+(Note: I use django-pyodb-azure to connect to a local SQL Server database. This can be removed from the Pipfile otherwise)
 
 **Start the server and build the project:**
 
-`python projectname/manage.py runserver`
-
-`npm run dev`
+```bash
+python projectname/manage.py runserver
+npm run dev
+```
 
 Your web app will now be running on localhost:8000.
 

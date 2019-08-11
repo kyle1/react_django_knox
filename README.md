@@ -38,17 +38,17 @@ INSTALLED_APPS = [
     ...
     'appname'
 ]
-```
 
-```python
+...
+
 ROOT_URLCONF = ‘projectname.urls’
-```
 
-```python
+...
+
 WSGI_APPLICATION = ‘projectname.wsgi.application’
-```
 
-```python
+...
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
